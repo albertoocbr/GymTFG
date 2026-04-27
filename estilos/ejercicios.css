@@ -1,140 +1,130 @@
-* {
+/* --- RESET Y BASE --- */
+.bg-dark-global {
+    background-color: #0C0F1A !important;
     margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Inter', sans-serif;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    color: #FFFFFF;
 }
 
-
-/* Heredamos el estilo global */
-.biblioteca-ejercicios {
-    padding: 140px 8% 80px 8%;
-    background: radial-gradient(circle at 50% -20%, #b1530b 0%, #000000 50%);
-    min-height: 100vh;
-}
-
-.intro-ejercicios {
-    max-width: 800px;
-    margin-bottom: 60px;
-}
-
-.intro-ejercicios h2 {
-    font-size: 4rem;
-    font-weight: 900;
-    letter-spacing: -3px;
-    line-height: 1;
-    margin: 15px 0;
-}
-
-.intro-ejercicios h2 span {
-    color: #FF4500;
-}
-
-.intro-ejercicios p {
-    color: #888;
-    font-size: 1.1rem;
-}
-
-/* Buscador y Filtros */
-.barra-busqueda {
+/* --- HEADER DEFINITIVO --- */
+.main-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 70px;
+    background: rgba(12, 15, 26, 0.95); /* Fondo sólido para que no se pierda */
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    z-index: 9999;
     display: flex;
-    gap: 15px;
-    margin-top: 30px;
+    align-items: center;
 }
 
-.barra-busqueda input, .barra-busqueda select {
-    background: #0a0a0a;
-    border: 1px solid #222;
-    padding: 15px 20px;
-    color: white;
-    border-radius: 12px;
-    font-size: 0.9rem;
-    outline: none;
+.header-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-section { display: flex; align-items: center; gap: 12px; }
+.logo-icon { background: #007AFF; padding: 6px; border-radius: 8px; display: flex; }
+.logo-text { font-weight: 800; font-size: 1.1rem; letter-spacing: -0.5px; }
+
+.nav-menu { display: flex; align-items: center; gap: 30px; }
+.nav-link { 
+    text-decoration: none; 
+    color: #94A3B8; 
+    font-size: 0.85rem; 
+    font-weight: 700; 
+    transition: 0.3s;
+}
+.nav-link.active, .nav-link:hover { color: #FFFFFF; }
+
+.btn-signup {
+    background: #007AFF;
+    color: white !important;
+    padding: 10px 20px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.85rem;
     transition: 0.3s;
 }
 
-.barra-busqueda input:focus {
-    border-color: #FF4500;
+/* --- CONTENIDO --- */
+.exercises-content {
+    padding-top: 120px;
+    padding-bottom: 60px;
 }
 
-/* Grid System */
-.grid-container {
+.container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+
+.page-title { font-size: 3rem; font-weight: 900; margin: 0; }
+.accent { color: #007AFF; }
+.page-subtitle { color: #94A3B8; margin-top: 10px; font-size: 1rem; }
+
+/* FILTROS */
+.filter-bar { display: flex; gap: 15px; margin: 40px 0; }
+.search-input, .category-select {
+    background: #1A1F2E;
+    border: 1px solid rgba(255,255,255,0.1);
+    color: white;
+    padding: 14px;
+    border-radius: 12px;
+}
+.search-input { flex: 1; }
+
+/* GRID */
+.exercises-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 30px;
 }
 
-/* Tarjetas Estilo IronForge */
-.card-gym {
-    background: #0a0a0a;
-    border-radius: 24px;
-    border: 1px solid #1a1a1a;
+.exercise-card {
+    background: #111827;
+    border-radius: 20px;
+    border: 1px solid rgba(255,255,255,0.05);
     overflow: hidden;
-    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-}
-
-.card-gym:hover {
-    transform: translateY(-12px);
-    border-color: #FF4500;
-    box-shadow: 0 20px 40px rgba(255, 69, 0, 0.1);
-}
-
-.img-wrapper {
-    position: relative;
-    height: 220px;
-}
-
-.img-wrapper img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    filter: grayscale(20%);
-}
-
-.tag-dificultad {
-    position: absolute;
-    top: 15px;
-    right: 15px;
-    background: rgba(0, 0, 0, 0.8);
-    color: #FF4500;
-    font-size: 10px;
-    font-weight: 800;
-    padding: 6px 12px;
-    border-radius: 50px;
-    border: 1px solid #FF4500;
-}
-
-.card-body {
-    padding: 25px;
-}
-
-.card-body h3 {
-    font-size: 1.4rem;
-    font-weight: 700;
-    margin-bottom: 8px;
-}
-
-.card-body p {
-    color: #666;
-    font-size: 0.9rem;
-    margin-bottom: 25px;
-}
-
-/* Botón Añadir */
-.btn-add-lista {
-    width: 100%;
-    background: transparent;
-    border: 1px solid #333;
-    color: white;
-    padding: 14px;
-    border-radius: 12px;
-    font-weight: 700;
-    font-size: 0.8rem;
-    cursor: pointer;
     transition: 0.3s;
 }
 
-.card-gym:hover .btn-add-lista {
-    border-color: #FF4500;
-    background: #FF4500;
+.exercise-card:hover { border-color: #007AFF; transform: translateY(-5px); }
+
+.card-image { position: relative; height: 200px; }
+.card-image img { width: 100%; height: 100%; object-fit: cover; }
+
+/* BADGES REPARADOS */
+.tag-difficulty {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    padding: 6px 12px;
+    border-radius: 8px;
+    font-size: 0.7rem;
+    font-weight: 900;
 }
+.intermediate { background: #FBBF24; color: #000000; }
+.advanced { background: #EF4444; color: #FFFFFF; }
+
+.card-details { padding: 25px; }
+.card-details h3 { margin: 0; font-size: 1.2rem; }
+.card-details p { color: #94A3B8; margin: 8px 0 20px 0; font-size: 0.9rem; }
+
+.add-button {
+    width: 100%;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    color: white;
+    padding: 12px;
+    border-radius: 10px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.add-button:hover { background: #FFFFFF; color: #000000; }
