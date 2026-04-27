@@ -1,19 +1,19 @@
 /* --- RESET Y BASE --- */
-.bg-dark-global {
+.fondo-oscuro {
     background-color: #0C0F1A !important;
     margin: 0;
     font-family: 'Plus Jakarta Sans', sans-serif;
     color: #FFFFFF;
 }
 
-/* --- HEADER DEFINITIVO --- */
-.main-header {
+/* --- CABECERA DEFINITIVA --- */
+.cabecera-principal {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 70px;
-    background: rgba(12, 15, 26, 0.95); /* Fondo sólido para que no se pierda */
+    background: rgba(12, 15, 26, 0.95); 
     backdrop-filter: blur(10px);
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     z-index: 9999;
@@ -21,7 +21,7 @@
     align-items: center;
 }
 
-.header-container {
+.contenedor-cabecera {
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
@@ -31,21 +31,21 @@
     align-items: center;
 }
 
-.logo-section { display: flex; align-items: center; gap: 12px; }
-.logo-icon { background: #007AFF; padding: 6px; border-radius: 8px; display: flex; }
-.logo-text { font-weight: 800; font-size: 1.1rem; letter-spacing: -0.5px; }
+.seccion-logo { display: flex; align-items: center; gap: 12px; }
+.icono-logo { background: #007AFF; padding: 6px; border-radius: 8px; display: flex; }
+.texto-logo { font-weight: 800; font-size: 1.1rem; letter-spacing: -0.5px; }
 
-.nav-menu { display: flex; align-items: center; gap: 30px; }
-.nav-link { 
+.menu-navegacion { display: flex; align-items: center; gap: 30px; }
+.enlace-nav { 
     text-decoration: none; 
     color: #94A3B8; 
     font-size: 0.85rem; 
     font-weight: 700; 
     transition: 0.3s;
 }
-.nav-link.active, .nav-link:hover { color: #FFFFFF; }
+.enlace-nav.activo, .enlace-nav:hover { color: #FFFFFF; }
 
-.btn-signup {
+.boton-registro {
     background: #007AFF;
     color: white !important;
     padding: 10px 20px;
@@ -57,36 +57,36 @@
 }
 
 /* --- CONTENIDO --- */
-.exercises-content {
+.contenido-ejercicios {
     padding-top: 120px;
     padding-bottom: 60px;
 }
 
-.container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+.contenedor { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
 
-.page-title { font-size: 3rem; font-weight: 900; margin: 0; }
-.accent { color: #007AFF; }
-.page-subtitle { color: #94A3B8; margin-top: 10px; font-size: 1rem; }
+.titulo-pagina { font-size: 3rem; font-weight: 900; margin: 0; }
+.resaltado { color: #007AFF; }
+.subtitulo-pagina { color: #94A3B8; margin-top: 10px; font-size: 1rem; }
 
 /* FILTROS */
-.filter-bar { display: flex; gap: 15px; margin: 40px 0; }
-.search-input, .category-select {
+.barra-filtros { display: flex; gap: 15px; margin: 40px 0; }
+.entrada-busqueda, .selector-categoria {
     background: #1A1F2E;
     border: 1px solid rgba(255,255,255,0.1);
     color: white;
     padding: 14px;
     border-radius: 12px;
 }
-.search-input { flex: 1; }
+.entrada-busqueda { flex: 1; }
 
 /* GRID */
-.exercises-grid {
+.cuadricula-ejercicios {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 30px;
 }
 
-.exercise-card {
+.tarjeta-ejercicio {
     background: #111827;
     border-radius: 20px;
     border: 1px solid rgba(255,255,255,0.05);
@@ -94,13 +94,13 @@
     transition: 0.3s;
 }
 
-.exercise-card:hover { border-color: #007AFF; transform: translateY(-5px); }
+.tarjeta-ejercicio:hover { border-color: #007AFF; transform: translateY(-5px); }
 
-.card-image { position: relative; height: 200px; }
-.card-image img { width: 100%; height: 100%; object-fit: cover; }
+.imagen-tarjeta { position: relative; height: 200px; }
+.imagen-tarjeta img { width: 100%; height: 100%; object-fit: cover; }
 
-/* BADGES REPARADOS */
-.tag-difficulty {
+/* ETIQUETAS DE DIFICULTAD */
+.etiqueta-dificultad {
     position: absolute;
     top: 15px;
     right: 15px;
@@ -109,14 +109,14 @@
     font-size: 0.7rem;
     font-weight: 900;
 }
-.intermediate { background: #FBBF24; color: #000000; }
-.advanced { background: #EF4444; color: #FFFFFF; }
+.intermedio { background: #FBBF24; color: #000000; }
+.avanzado { background: #EF4444; color: #FFFFFF; }
 
-.card-details { padding: 25px; }
-.card-details h3 { margin: 0; font-size: 1.2rem; }
-.card-details p { color: #94A3B8; margin: 8px 0 20px 0; font-size: 0.9rem; }
+.detalles-tarjeta { padding: 25px; }
+.detalles-tarjeta h3 { margin: 0; font-size: 1.2rem; }
+.detalles-tarjeta p { color: #94A3B8; margin: 8px 0 20px 0; font-size: 0.9rem; }
 
-.add-button {
+.boton-añadir {
     width: 100%;
     background: rgba(255,255,255,0.05);
     border: 1px solid rgba(255,255,255,0.1);
@@ -127,4 +127,4 @@
     cursor: pointer;
     transition: 0.3s;
 }
-.add-button:hover { background: #FFFFFF; color: #000000; }
+.boton-añadir:hover { background: #FFFFFF; color: #000000; }

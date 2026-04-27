@@ -7,12 +7,12 @@
     <link rel="stylesheet" href="estilos/ejercicios.css">
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
 </head>
-<body class="bg-dark-global">
+<body class="fondo-oscuro">
 
-    <header class="main-header">
-        <div class="header-container">
-            <div class="logo-section">
-                <div class="logo-icon">
+    <header class="cabecera-principal">
+        <div class="contenedor-cabecera">
+            <div class="seccion-logo">
+                <div class="icono-logo">
                     <svg width="24" height="24" viewBox="0 0 36 36" fill="none">
                         <rect x="1" y="15.5" width="6" height="5" rx="2" fill="rgba(255,255,255,.55)"/>
                         <rect x="2.5" y="12" width="3.5" height="12" rx="1.75" fill="white"/>
@@ -21,53 +21,53 @@
                         <rect x="6" y="16.5" width="24" height="3" rx="1.5" fill="rgba(255,255,255,.80)"/>
                     </svg>
                 </div>
-                <span class="logo-text">DM TRAINERS</span>
+                <span class="texto-logo">DM TRAINERS</span>
             </div>
 
-            <nav class="nav-menu">
-                <a href="index.php" class="nav-link">INICIO</a>
-                <a href="ejercicios.php" class="nav-link active">EJERCICIOS</a>
-                <a href="registro.php" class="btn-signup">REGISTRARSE</a>
+            <nav class="menu-navegacion">
+                <a href="ejercicios.php" class="enlace-nav activo">EJERCICIOS</a>
+                <a href="home.html" class="enlace-nav">INICIO</a>
+                <a href="registro.php" class="boton-registro">REGISTRARSE</a>
             </nav>
         </div>
     </header>
 
-    <main class="exercises-content">
-        <div class="container">
-            <h1 class="page-title">Explora <span class="accent">Ejercicios.</span></h1>
-            <p class="page-subtitle">Selecciona los movimientos para construir tu rutina personalizada.</p>
+    <main class="contenido-ejercicios">
+        <div class="contenedor">
+            <h1 class="titulo-pagina">Explora <span class="resaltado">Ejercicios.</span></h1>
+            <p class="subtitulo-pagina">Selecciona los movimientos para construir tu rutina personalizada.</p>
             
-            <div class="filter-bar">
-                <input type="text" class="search-input" placeholder="Buscar ejercicio (ej. Press banca...)">
-                <select class="category-select">
+            <div class="barra-filtros">
+                <input type="text" class="entrada-busqueda" placeholder="Buscar ejercicio (ej. Press banca...)">
+                <select class="selector-categoria">
                     <option>Todo el cuerpo</option>
                     <option>Pecho</option>
                     <option>Piernas</option>
                 </select>
             </div>
 
-            <div class="exercises-grid">
-                <div class="exercise-card">
-                    <div class="card-image">
+            <div class="cuadricula-ejercicios">
+                <div class="tarjeta-ejercicio">
+                    <div class="imagen-tarjeta">
                         <img src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?q=80&w=600" alt="Press">
-                        <span class="tag-difficulty intermediate">INTERMEDIO</span>
+                        <span class="etiqueta-dificultad intermedio">INTERMEDIO</span>
                     </div>
-                    <div class="card-details">
+                    <div class="detalles-tarjeta">
                         <h3>Press de Banca</h3>
                         <p>Pecho • Fuerza • Barra</p>
-                        <button class="add-button">+ AÑADIR A MI LISTA</button>
+                        <button class="boton-añadir">+ AÑADIR A MI LISTA</button>
                     </div>
                 </div>
 
-                <div class="exercise-card">
-                    <div class="card-image">
+                <div class="tarjeta-ejercicio">
+                    <div class="imagen-tarjeta">
                         <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=600" alt="Sentadilla">
-                        <span class="tag-difficulty advanced">AVANZADO</span>
+                        <span class="etiqueta-dificultad avanzado">AVANZADO</span>
                     </div>
-                    <div class="card-details">
+                    <div class="detalles-tarjeta">
                         <h3>Sentadilla con Barra</h3>
                         <p>Piernas • Hipertrofia • Barra</p>
-                        <button class="add-button">+ AÑADIR A MI LISTA</button>
+                        <button class="boton-añadir">+ AÑADIR A MI LISTA</button>
                     </div>
                 </div>
             </div>
