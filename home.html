@@ -10,34 +10,24 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
 
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: { sans: ['Plus Jakarta Sans', 'sans-serif'] },
-                    colors: {
-                        'bg-dark': '#0C0F1A',
-                        'blue-ios': '#007AFF',
-                        'surface': '#111827',
-                        'text-main': '#F0F4FF',
-                        'text-dim': '#6B7A99',
-                    },
-                    animation: {
-                        'fade-up': 'fadeUp 0.6s cubic-bezier(0.22, 0.68, 0, 1.2) both',
-                    },
-                    keyframes: {
-                        fadeUp: {
-                            '0%': { opacity: '0', transform: 'translateY(20px)' },
-                            '100%': { opacity: '1', transform: 'translateY(0)' },
-                        }
-                    }
-                }
-            }
-        }
-    </script>
-
     <style>
+        /* ── Mismas animaciones que index.php ── */
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+
+        .a1 { animation: fadeUp .45s .04s cubic-bezier(.22,.68,0,1.2) both; }
+        .a2 { animation: fadeUp .45s .10s cubic-bezier(.22,.68,0,1.2) both; }
+        .a3 { animation: fadeUp .45s .16s cubic-bezier(.22,.68,0,1.2) both; }
+        .a4 { animation: fadeUp .45s .22s cubic-bezier(.22,.68,0,1.2) both; }
+        .a5 { animation: fadeUp .45s .28s cubic-bezier(.22,.68,0,1.2) both; }
+        .a6 { animation: fadeUp .45s .34s cubic-bezier(.22,.68,0,1.2) both; }
+        .a7 { animation: fadeUp .45s .40s cubic-bezier(.22,.68,0,1.2) both; }
+        .a8 { animation: fadeUp .45s .46s cubic-bezier(.22,.68,0,1.2) both; }
+
         body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
             background-color: #0C0F1A;
             background-image: radial-gradient(
                 ellipse 70% 55% at 50% -5%,
@@ -45,6 +35,7 @@
                 transparent 70%
             );
             color: #F0F4FF;
+            min-height: 100vh;
         }
 
         .glass-nav {
@@ -56,22 +47,14 @@
 
         .btn-primary {
             background: #007AFF;
-            transition: all 0.2s;
+            transition: transform 0.12s, box-shadow 0.12s, background 0.15s;
         }
         .btn-primary:hover {
             background: #0066D6;
-            box-shadow: 0 6px 22px rgba(0, 122, 255, 0.35);
+            box-shadow: 0 6px 22px rgba(0, 122, 255, 0.40);
             transform: translateY(-1px);
         }
-
-        .btn-secondary {
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            transition: all 0.2s;
-        }
-        .btn-secondary:hover {
-            background: rgba(255, 255, 255, 0.08);
-        }
+        .btn-primary:active { transform: scale(0.98); }
 
         .stat-card {
             background: rgba(26, 32, 53, 0.4);
@@ -81,11 +64,11 @@
     </style>
 </head>
 
-<body class="font-sans antialiased min-h-screen">
+<body class="antialiased">
 
     <header class="glass-nav fixed top-0 w-full z-50">
         <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-            <div class="flex items-center gap-3">
+            <div class="flex items-center gap-3 a1">
                 <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-[#1A8FFF] to-[#0055CC] flex items-center justify-center shadow-lg shadow-blue-500/20">
                     <svg width="20" height="20" viewBox="0 0 36 36" fill="none">
                         <rect x="1" y="15.5" width="6" height="5" rx="2" fill="rgba(255,255,255,.55)"/>
@@ -98,75 +81,62 @@
                 <span class="text-xl font-extrabold tracking-tight">DM TRAINERS</span>
             </div>
 
-            <nav class="hidden md:flex items-center gap-6">
-                <a href="index.php" class="text-sm font-semibold text-text-dim hover:text-white transition-colors">INICIAR SESIÓN</a>
-                <a href="registro.php" class="btn-primary px-5 py-2.5 rounded-xl text-sm font-bold">REGISTRARSE</a>
+            <nav class="hidden md:flex items-center gap-6 a2">
+                <a href="index.php" class="text-sm font-semibold text-[#6B7A99] hover:text-white transition-colors">INICIAR SESIÓN</a>
+                <a href="registro.php" class="btn-primary px-5 py-2.5 rounded-xl text-sm font-bold text-white">REGISTRARSE</a>
             </nav>
         </div>
     </header>
 
-    <section class="pt-32 pb-20 px-6 max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-16">
+    <main class="pt-32 pb-20 px-6 max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-16">
         
-        <div class="flex-1 space-y-8 animate-fade-up">
-            <div class="inline-flex items-center py-1.5 px-4 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-ios text-xs font-bold tracking-wide uppercase">
-                 Nueva Temporada disponible
+        <div class="flex-1 space-y-8">
+            <div class="a3 inline-flex items-center py-1.5 px-4 rounded-full bg-blue-500/10 border border-blue-500/20 text-[#007AFF] text-xs font-bold tracking-wide uppercase">
+                Nuevo entrenamiento disponible
             </div>
 
-            <h1 class="text-5xl md:text-7xl font-black leading-[1.1] tracking-tight">
-                Forja tu mejor <span class="text-blue-ios">versión.</span>
+            <h1 class="a4 text-5xl md:text-7xl font-black leading-[1.1] tracking-tight">
+                Forja tu mejor <span class="text-[#007AFF]">versión.</span>
             </h1>
 
-            <p class="text-text-dim text-lg md:text-xl max-w-xl leading-relaxed">
+            <p class="a5 text-[#6B7A99] text-lg md:text-xl max-w-xl leading-relaxed">
                 Clases en vivo, biblioteca de ejercicios y un dashboard personal que te impulsa cada día. Entrena con propósito.
             </p>
 
-            <div class="flex flex-wrap gap-4 pt-4">
-                <a href="registro.php" class="btn-primary px-8 py-4 rounded-2xl font-bold flex items-center gap-2 group">
+            <div class="a6 flex flex-wrap gap-4 pt-4">
+                <a href="registro.php" class="btn-primary px-8 py-4 rounded-2xl font-bold flex items-center gap-2 group text-white">
                     ÚNETE AHORA
                     <svg class="group-hover:translate-x-1 transition-transform" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14m-7-7 7 7-7 7"/></svg>
                 </a>
-                <a href="#entrenamientos" class="btn-secondary px-8 py-4 rounded-2xl font-bold">
+                <a href="#clases" class="px-8 py-4 rounded-2xl font-bold bg-white/5 border border-white/10 hover:bg-white/10 transition-colors">
                     Explorar clases
                 </a>
             </div>
 
-            <div class="grid grid-cols-3 gap-4 pt-8 border-t border-white/5">
+            <div class="a7 grid grid-cols-3 gap-4 pt-8 border-t border-white/5">
                 <div class="stat-card p-4 text-center">
-                    <div class="text-2xl font-black text-blue-ios">2.4k+</div>
-                    <div class="text-[10px] font-bold text-text-dim uppercase tracking-wider">Atletas</div>
+                    <div class="text-2xl font-black text-[#007AFF]">2.4k+</div>
+                    <div class="text-[10px] font-bold text-[#6B7A99] uppercase tracking-wider">Atletas</div>
                 </div>
                 <div class="stat-card p-4 text-center">
-                    <div class="text-2xl font-black text-blue-ios">50+</div>
-                    <div class="text-[10px] font-bold text-text-dim uppercase tracking-wider">Clases</div>
+                    <div class="text-2xl font-black text-[#007AFF]">50+</div>
+                    <div class="text-[10px] font-bold text-[#6B7A99] uppercase tracking-wider">Clases</div>
                 </div>
                 <div class="stat-card p-4 text-center">
-                    <div class="text-2xl font-black text-blue-ios">4.9</div>
-                    <div class="text-[10px] font-bold text-text-dim uppercase tracking-wider">Valoración</div>
+                    <div class="text-2xl font-black text-[#007AFF]">4.9</div>
+                    <div class="text-[10px] font-bold text-[#6B7A99] uppercase tracking-wider">Valoración</div>
                 </div>
             </div>
         </div>
 
-        <div class="flex-1 relative animate-fade-up" style="animation-delay: 0.2s;">
+        <div class="flex-1 relative a8">
             <div class="absolute -inset-4 bg-blue-500/20 blur-[100px] rounded-full opacity-30"></div>
-            
             <div class="relative rounded-[40px] overflow-hidden border border-white/10 shadow-2xl">
-                <img src="imagenes/personaEntrenandoo.webp" alt="Atleta entrenando" class="w-full h-auto object-cover scale-105 hover:scale-100 transition-transform duration-700">
-            </div>
-            
-            <div class="absolute -bottom-6 -left-6 glass-nav p-5 rounded-2xl border border-white/10 shadow-xl hidden md:block">
-                <div class="flex items-center gap-4">
-                    <div class="w-12 h-12 bg-green-500/20 rounded-full flex items-center justify-center text-green-500">
-                        <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>
-                    </div>
-                    <div>
-                        <div class="text-sm font-bold">Progreso Diario</div>
-                        <div class="text-xs text-text-dim">Completado con éxito</div>
-                    </div>
-                </div>
+                <img src="imagenes/personaEntrenandoo.webp" alt="Atleta" class="w-full h-auto object-cover">
             </div>
         </div>
 
-    </section>
+    </main>
 
 </body>
 </html>
