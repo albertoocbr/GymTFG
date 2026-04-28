@@ -99,5 +99,5 @@ $_SESSION['user_nombre'] = $user['nombre'];
 echo json_encode([
     'ok'       => true,
     'msg'      => '¡Bienvenido, ' . htmlspecialchars($user['nombre'], ENT_QUOTES) . '!',
-    'redirect' => 'dashboard.php'   // Ajusta a tu ruta real
+    'redirect' => 'home.php'   // Ajusta a tu ruta real
 ]);
