@@ -10,16 +10,17 @@ body {
     overflow-x: hidden;
 }
 
-/* --- Header --- */
-header {
+/* --- Header & Navegación --- */
+header.barra-navegacion {
     position: fixed;
     top: 0;
     width: 100%;
-    z-index: 100;
+    z-index: 1000;
     background: rgba(12, 15, 26, 0.7);
     backdrop-filter: blur(15px);
     -webkit-backdrop-filter: blur(15px);
     border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    box-sizing: border-box;
 }
 
 .seccionHeader {
@@ -62,12 +63,20 @@ header {
     gap: 2.5rem;
 }
 
+/* Estilo para los enlaces de texto y botón dropdown */
 .enlacelogin {
     font-size: 0.85rem;
     font-weight: 700;
     color: #94A3B8;
     text-decoration: none;
     transition: color 0.3s;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-family: inherit;
+    display: flex;
+    align-items: center;
+    gap: 6px;
 }
 
 .enlacelogin:hover {
@@ -89,6 +98,61 @@ header {
     background: #0066D6;
     transform: translateY(-2px);
     box-shadow: 0 5px 15px rgba(0, 122, 255, 0.4);
+}
+
+/* --- Lógica del Menú Desplegable (Dropdown) --- */
+.dropdown-contenedor {
+    position: relative;
+}
+
+.flecha {
+    font-size: 0.6rem;
+    transition: transform 0.3s ease;
+}
+
+.contenido-desplegable {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%) translateY(10px);
+    background: rgba(18, 22, 37, 0.98);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 1rem;
+    min-width: 180px;
+    padding: 0.8rem;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.contenido-desplegable a {
+    color: #94A3B8;
+    text-decoration: none;
+    display: block;
+    padding: 0.7rem 1rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+    border-radius: 0.6rem;
+    transition: all 0.2s;
+}
+
+.contenido-desplegable a:hover {
+    background: rgba(0, 122, 255, 0.1);
+    color: #FFFFFF;
+}
+
+/* Activar Dropdown al pasar el mouse */
+.dropdown-contenedor:hover .contenido-desplegable {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(0);
+}
+
+.dropdown-contenedor:hover .flecha {
+    transform: rotate(180deg);
+    color: #007AFF;
 }
 
 /* --- Layout Body --- */
@@ -252,12 +316,10 @@ header {
     to { opacity: 1; transform: translateY(0); }
 }
 
-.a1, .a2, .a3, .a4, .a5, .a6, .a7, .a8 {
+.a3, .a4, .a5, .a6, .a7, .a8 {
     animation: fadeUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 
-.a1 { animation-delay: 0.1s; }
-.a2 { animation-delay: 0.2s; }
 .a3 { animation-delay: 0.3s; }
 .a4 { animation-delay: 0.4s; }
 .a5 { animation-delay: 0.5s; }
