@@ -26,7 +26,7 @@
 
             <nav class="menu-navegacion">
                 <a href="home.php" class="enlace-nav">INICIO</a>
-                <a href="ejercicios.php" class="enlace-nav">ENTRENAMIENTOS</a>
+                <a href="entrenamiento.php" class="enlace-nav">ENTRENAMIENTOS</a>
                 <a href="index.php" class="enlace-nav activo">INICIAR SESION</a>
                 <a href="registro.php" class="boton-registro">REGISTRARSE</a>
             </nav>

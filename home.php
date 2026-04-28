@@ -8,38 +8,18 @@
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header>
-        <div class="seccionHeader">
-            <div class="logo a1">
-                <div class="icono">
-                    <svg width="24" height="24" viewBox="0 0 36 36" fill="none">
-                        <rect x="1" y="15.5" width="6" height="5" rx="2" fill="rgba(255,255,255,.55)"/>
-                        <rect x="2.5" y="12" width="3.5" height="12" rx="1.75" fill="white"/>
-                        <rect x="29" y="15.5" width="6" height="5" rx="2" fill="rgba(255,255,255,.55)"/>
-                        <rect x="30" y="12" width="3.5" height="12" rx="1.75" fill="white"/>
-                        <rect x="6" y="16.5" width="24" height="3" rx="1.5" fill="rgba(255,255,255,.80)"/>
-                    </svg>
-                </div>
-                <span class="textologo">DM TRAINERS</span>
-            </div>
 
-            <nav class="enlaces a2">
-                <a href="index.php" class="enlacelogin">INICIAR SESIÓN</a>
-                <a href="registro.php" class="btn-primary btn-nav">REGISTRARSE</a>
-            </nav>
-        </div>
-    </header>
 
     <main class="seccionbody">
         <div class="contenidobody">
-            <div class="boton1 a3">Nuevo entrenamiento disponible</div>
+            <div class="boton1 a3">Entrenamiento disponible</div>
 
             <h1 class="titulo1 a4">
                 Forja tu mejor <span class="textocolor">versión.</span>
             </h1>
 
             <p class="descripciontexto a5">
-                Clases en vivo, biblioteca de ejercicios y un dashboard personal que te impulsa cada día. Entrena con propósito.
+               Déjate de excusas y ven a entrenar. Estamos aquí mismo, en La Villa de Don Fadrique, con todo lo que necesitas para ponerte en forma sin tener que irte más lejos. Pásate un día, conoce el sitio y tú decides.
             </p>
 
             <div class="acciones a6">

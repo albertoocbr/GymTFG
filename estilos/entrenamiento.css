@@ -1,0 +1,197 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --color-fondo: #0b0e14;
+    --fondo-tarjeta: #161b22;
+    --azul-acento: #007bff;
+    --texto-principal: #ffffff;
+    --texto-tenue: #8b949e;
+    --color-borde: #30363d;
+}
+
+body {
+    background-color: var(--color-fondo);
+    color: var(--texto-principal);
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    padding-top: 100px; /* Espacio para que el header no tape el contenido */
+}
+
+.cabecera-principal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 70px;
+    background: rgba(11, 14, 20, 0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--color-borde);
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+}
+
+.contenedor-cabecera {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.seccion-logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.icono-logo {
+    background: var(--azul-acento);
+    padding: 6px;
+    border-radius: 8px;
+    display: flex;
+}
+
+.texto-logo {
+    font-weight: 800;
+    font-size: 1.1rem;
+    letter-spacing: -0.5px;
+    color: white;
+}
+
+.menu-navegacion {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.enlace-nav {
+    text-decoration: none;
+    color: var(--texto-tenue);
+    font-size: 0.85rem;
+    font-weight: 700;
+    transition: 0.3s;
+}
+
+.enlace-nav.activo, .enlace-nav:hover {
+    color: #FFFFFF;
+}
+
+.boton-registro {
+    background: var(--azul-acento);
+    color: white !important;
+    padding: 10px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.85rem;
+    transition: 0.3s;
+}
+
+.cuadricula-entrenamientos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.tarjeta-entrenamiento {
+    background-color: var(--fondo-tarjeta);
+    border: 1px solid var(--color-borde);
+    border-radius: 14px;
+    width: 360px;
+    overflow: hidden; 
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.tarjeta-entrenamiento:hover {
+    transform: translateY(-5px);
+    border-color: var(--azul-acento);
+}
+
+.contenedor-imagen {
+    position: relative;
+    width: 100%;
+    height: 200px;
+}
+
+.contenedor-imagen img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    display: block;
+}
+
+.etiqueta-nivel {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #ffc107; 
+    padding: 5px 12px;
+    border-radius: 6px;
+    font-size: 0.7rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    backdrop-filter: blur(4px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.contenido-tarjeta {
+    padding: 20px;
+}
+
+.titulo-entrenamiento {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: #fff;
+}
+
+.datos-entrenamiento {
+    color: var(--texto-tenue);
+    font-size: 0.85rem;
+    margin-bottom: 15px;
+}
+
+.contador-ejercicios {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--azul-acento);
+    font-weight: 700;
+    font-size: 0.9rem;
+    margin-bottom: 20px;
+}
+
+.boton-ver {
+    display: block; 
+    width: 100%;
+    background-color: #1f242c;
+    color: #ffffff;
+    border: 1px solid var(--color-borde);
+    padding: 14px;
+    border-radius: 10px;
+    font-weight: 700;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: center;
+    outline: none;
+}
+
+.boton-ver:hover {
+    background-color: var(--azul-acento);
+    border-color: var(--azul-acento);
+    color: white;
+}
