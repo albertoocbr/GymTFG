@@ -1,0 +1,136 @@
+/* Variables de diseño */
+:root {
+    --azul: #007AFF;
+    --fondo: #0C0F1A;
+    --superficie: #111827;
+    --fondo-input: #1A2035;
+    --texto-principal: #F0F4FF;
+    --texto-secundario: #6B7A99;
+}
+
+/* Base del sitio */
+body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    background-color: var(--fondo);
+    background-image: radial-gradient(ellipse 70% 55% at 50% -5%, rgba(0, 100, 255, 0.09) 0%, transparent 70%);
+    color: var(--texto-principal);
+    margin: 0;
+    min-height: 100vh;
+}
+
+/* Navegación Estilo Cristal */
+.navegacion {
+    background: rgba(17, 24, 39, 0.7);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 50;
+    height: 80px;
+    display: flex;
+    align-items: center;
+}
+
+.contenedor-nav {
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+    padding: 0 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Contenido Principal */
+.seccion-nutricion {
+    padding-top: 130px;
+    padding-bottom: 80px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-left: 24px;
+    padding-right: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+}
+
+@media (min-width: 1024px) {
+    .seccion-nutricion {
+        flex-direction: row;
+        align-items: center;
+    }
+}
+
+/* Tarjeta del Formulario */
+.tarjeta-formulario {
+    background: var(--superficie);
+    border: 1px solid rgba(0, 122, 255, 0.12);
+    border-radius: 26px;
+    padding: 40px;
+    box-shadow: 0 24px 48px rgba(0,0,0,0.4);
+    width: 100%;
+}
+
+/* Estilo de los campos (Inputs) */
+.campo-entrada {
+    width: 100%;
+    background: var(--fondo-input);
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 14px;
+    padding: 14px 16px;
+    color: var(--texto-principal);
+    transition: all 0.2s;
+    margin-top: 8px;
+}
+
+.campo-entrada:focus {
+    outline: none;
+    border-color: var(--azul);
+    background: #1E2A45;
+}
+
+.etiqueta-pequeña {
+    display: block;
+    font-size: 10px;
+    font-weight: 800;
+    color: var(--texto-secundario);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-left: 4px;
+}
+
+/* Botón Principal */
+.boton-enviar {
+    background: var(--azul);
+    color: white;
+    width: 100%;
+    border-radius: 14px;
+    padding: 16px;
+    font-weight: 700;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s;
+    margin-top: 16px;
+}
+
+.boton-enviar:hover {
+    background: #0066D6;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0,122,255,0.3);
+}
+
+/* Animaciones */
+.animar-subida {
+    animation: aparecerSubiendo .5s ease-out both;
+}
+
+@keyframes aparecerSubiendo {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Retrasos para que los elementos aparezcan uno tras otro */
+.retraso-1 { animation-delay: 0.1s; }
+.retraso-2 { animation-delay: 0.2s; }
+.retraso-3 { animation-delay: 0.3s; }
