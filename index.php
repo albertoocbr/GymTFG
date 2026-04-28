@@ -36,199 +36,6 @@
       }
     }
   </script>
- 
-  <style>
-    *, *::before, *::after { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
-    html, body { height: 100%; margin: 0; }
- 
-    /* ── Variables de color ──────────────────────────────────── */
-    :root {
-      --blue:        #007AFF;
-      --blue-dim:    rgba(0, 122, 255, 0.18);
-      --blue-mid:    rgba(0, 122, 255, 0.55);
-      --blue-bright: rgba(0, 122, 255, 0.90);
-      --bg:          #0C0F1A;
-      --surface:     #111827;   /* card base */
-      --input-bg:    #1A2035;
-      --input-focus: #1E2A45;
-      --text:        #F0F4FF;
-      --text-sub:    #6B7A99;
-      --text-hint:   #374166;
-      --border-idle: rgba(255,255,255,0.06);
-    }
- 
-    body {
-      font-family: 'Plus Jakarta Sans', sans-serif;
-      background: var(--bg);
-      /* Gradiente radial sutil — 1 sola capa, sin coste */
-      background-image: radial-gradient(
-        ellipse 70% 55% at 50% -5%,
-        rgba(0, 100, 255, 0.09) 0%,
-        transparent 70%
-      );
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      padding: 40px 20px;
-    }
- 
-    /* ── Borde animado: pure CSS, sin canvas, sin JS ─────────── */
-    /*
-       Técnica ligera: un único @keyframes que cicla
-       border-color + box-shadow.
-       Sin pseudo-elementos, sin SVG, sin gradiente cónico.
-       Solo 2 propiedades animadas → mínimo GPU.
-    */
-    @keyframes borderGlow {
-      0%   { border-color: rgba(0,122,255,0.12);
-             box-shadow: 0 0 0   0   rgba(0,122,255,0),
-                         0 24px 48px rgba(0,0,0,0.45); }
-      40%  { border-color: rgba(0,122,255,0.70);
-             box-shadow: 0 0 18px 3px rgba(0,122,255,0.30),
-                         0 24px 48px rgba(0,0,0,0.45); }
-      60%  { border-color: rgba(0,160,255,0.85);
-             box-shadow: 0 0 28px 6px rgba(0,140,255,0.22),
-                         0 24px 48px rgba(0,0,0,0.45); }
-      100% { border-color: rgba(0,122,255,0.12);
-             box-shadow: 0 0 0   0   rgba(0,122,255,0),
-                         0 24px 48px rgba(0,0,0,0.45); }
-    }
- 
-    .login-card {
-      background: var(--surface);
-      border: 1px solid rgba(0,122,255,0.12);
-      border-radius: 26px;
-      padding: 32px 28px 28px;
-      width: 100%;
-      max-width: 390px;
-      /* Animación: 4s, suave, infinita, will-change solo lo necesario */
-      animation: borderGlow 4s ease-in-out infinite;
-      will-change: border-color, box-shadow;
-    }
- 
-    /* ── Inputs estilo iOS dark ──────────────────────────────── */
-    .ios-input {
-      width: 100%;
-      background: var(--input-bg);
-      border: 1px solid var(--border-idle);
-      border-radius: 14px;
-      padding: 14px 14px 14px 44px;
-      font-size: 16px;
-      font-family: 'Plus Jakarta Sans', sans-serif;
-      color: var(--text);
-      transition: background 0.18s, border-color 0.18s, box-shadow 0.18s;
-      -webkit-appearance: none;
-    }
-    .ios-input::placeholder { color: var(--text-hint); }
-    .ios-input:focus {
-      outline: none;
-      background: var(--input-focus);
-      border-color: rgba(0,122,255,0.55);
-      box-shadow: 0 0 0 3px rgba(0,122,255,0.15);
-    }
-    .ios-input.error {
-      border-color: rgba(255,59,48,0.60);
-      box-shadow: 0 0 0 3px rgba(255,59,48,0.12);
-    }
- 
-    /* ── Botón principal ─────────────────────────────────────── */
-    .ios-btn {
-      width: 100%;
-      background: var(--blue);
-      color: #fff;
-      border: none;
-      border-radius: 14px;
-      padding: 16px 24px;
-      font-size: 16px;
-      font-weight: 700;
-      font-family: 'Plus Jakarta Sans', sans-serif;
-      cursor: pointer;
-      min-height: 52px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 9px;
-      transition: transform 0.12s, box-shadow 0.12s, background 0.15s, opacity 0.15s;
-    }
-    .ios-btn:hover:not(:disabled) {
-      background: #0066D6;
-      box-shadow: 0 6px 22px rgba(0,122,255,0.40);
-      transform: translateY(-1px);
-    }
-    .ios-btn:active:not(:disabled) { transform: scale(0.98); }
-    .ios-btn:disabled { opacity: 0.6; cursor: not-allowed; }
-    .ios-btn.success-state { background: #34C759 !important; box-shadow: 0 6px 20px rgba(52,199,89,0.35) !important; }
- 
-    /* ── Botones sociales ────────────────────────────────────── */
-    .social-btn {
-      flex: 1;
-      display: flex; align-items: center; justify-content: center; gap: 8px;
-      background: var(--input-bg);
-      border: 1px solid var(--border-idle);
-      border-radius: 13px;
-      padding: 13px 8px;
-      font-size: 13.5px;
-      font-weight: 600;
-      font-family: 'Plus Jakarta Sans', sans-serif;
-      color: var(--text);
-      cursor: pointer;
-      min-height: 48px;
-      transition: background 0.15s, border-color 0.15s;
-    }
-    .social-btn:hover { background: var(--input-focus); border-color: rgba(255,255,255,0.12); }
- 
-    /* ── Separador ───────────────────────────────────────────── */
-    .sep { flex: 1; height: 1px; background: rgba(255,255,255,0.07); }
- 
-    /* ── Spinner (CSS puro) ──────────────────────────────────── */
-    .spinner {
-      width: 18px; height: 18px;
-      border: 2.5px solid rgba(255,255,255,0.3);
-      border-top-color: #fff;
-      border-radius: 50%;
-      animation: spin 0.65s linear infinite;
-    }
-    @keyframes spin { to { transform: rotate(360deg); } }
- 
-    /* ── Toast ───────────────────────────────────────────────── */
-    #toast {
-      position: fixed;
-      top: 48px; left: 50%;
-      transform: translateX(-50%);
-      z-index: 100;
-      padding: 12px 18px;
-      border-radius: 14px;
-      font-size: 14px; font-weight: 600;
-      display: flex; align-items: center; gap: 9px;
-      white-space: nowrap;
-      box-shadow: 0 8px 28px rgba(0,0,0,0.4);
-    }
-    #toast.hidden { display: none; }
-    #toast.toast-error   { background: rgba(255,59,48,0.95);  color: #fff; }
-    #toast.toast-success { background: rgba(52,199,89,0.95);  color: #fff; }
-    @keyframes slideDown {
-      from { opacity: 0; transform: translateX(-50%) translateY(-10px); }
-      to   { opacity: 1; transform: translateX(-50%) translateY(0); }
-    }
-    #toast.show { animation: slideDown 0.25s ease both; }
- 
-    /* ── Animaciones de entrada ──────────────────────────────── */
-    .a1 { animation: fadeUp .45s .04s cubic-bezier(.22,.68,0,1.2) both; }
-    .a2 { animation: fadeUp .45s .10s cubic-bezier(.22,.68,0,1.2) both; }
-    .a3 { animation: fadeUp .45s .16s cubic-bezier(.22,.68,0,1.2) both; }
-    .a4 { animation: fadeUp .45s .22s cubic-bezier(.22,.68,0,1.2) both; }
-    .a5 { animation: fadeUp .45s .28s cubic-bezier(.22,.68,0,1.2) both; }
-    .a6 { animation: fadeUp .45s .34s cubic-bezier(.22,.68,0,1.2) both; }
-    .a7 { animation: fadeUp .45s .40s cubic-bezier(.22,.68,0,1.2) both; }
-    .a8 { animation: fadeUp .45s .46s cubic-bezier(.22,.68,0,1.2) both; }
- 
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(20px); }
-      to   { opacity: 1; transform: translateY(0); }
-    }
-  </style>
 </head>
  
 <body>
@@ -258,7 +65,6 @@
       </div>
     </header>
  
-    <!-- ── Card con borde animado ────────────────────────────── -->
     <div class="login-card a4">
  
       <div style="margin-bottom:22px;">
@@ -286,7 +92,6 @@
              style="display:none;color:#FF3B30;font-size:12px;margin:5px 0 0 4px;font-weight:500;"></p>
         </div>
  
-        <!-- Contraseña -->
         <div style="margin-bottom:6px;" class="a6">
           <div style="position:relative;">
             <span style="position:absolute;left:13px;top:50%;transform:translateY(-50%);pointer-events:none;" aria-hidden="true">
@@ -317,7 +122,6 @@
           <p id="password-error" role="alert" aria-live="polite"
              style="display:none;color:#FF3B30;font-size:12px;margin:5px 0 0 4px;font-weight:500;"></p>
  
-          <!-- ¿Olvidaste? -->
           <div style="text-align:right;margin-top:8px;">
             <a href="recover.php"
                style="color:#007AFF;font-size:13px;font-weight:600;text-decoration:none;">
@@ -326,7 +130,6 @@
           </div>
         </div>
  
-        <!-- Botón submit -->
         <div style="margin-top:20px;" class="a7">
           <button type="submit" id="submit-btn" class="ios-btn">
             <span id="btn-spinner" class="spinner" style="display:none;" aria-hidden="true"></span>
@@ -335,14 +138,12 @@
         </div>
       </form>
  
-      <!-- Separador -->
       <div style="display:flex;align-items:center;gap:12px;margin:20px 0;" class="a7">
         <div class="sep"></div>
         <span style="color:#374166;font-size:12px;font-weight:600;letter-spacing:.04em;">O</span>
         <div class="sep"></div>
       </div>
  
-      <!-- Sociales -->
       <div style="display:flex;gap:10px;" class="a8">
         <button type="button" aria-label="Continuar con Google" class="social-btn">
           <svg width="17" height="17" viewBox="0 0 24 24" aria-hidden="true">
@@ -362,7 +163,6 @@
       </div>
     </div>
  
-    <!-- Registro -->
     <p style="text-align:center;color:#6B7A99;font-size:14px;margin-top:20px;" class="a8">
       ¿No tienes cuenta?
       <a href="registro.php"
@@ -373,7 +173,6 @@
  
   </main>
  
-  <!-- Toast -->
   <div id="toast" class="hidden" role="status" aria-live="polite" aria-atomic="true">
     <span id="toast-icon" aria-hidden="true"></span>
     <span id="toast-msg"></span>
