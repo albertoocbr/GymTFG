@@ -39,3 +39,14 @@ INSERT INTO usuarios (nombre, email, password_hash) VALUES
   'demo@gym.app',
   '$2y$12$eImiTXuWVxfM37uY4JANjuCRJMflS/FLzXXjKBinPGPAfn1xAoVW2'   -- GymDemo2025!
 );
+
+
+
+CREATE TABLE IF NOT EXISTS nutricion_consultas (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nombre VARCHAR(100) NOT NULL,
+    email VARCHAR(150) NOT NULL,
+    objetivo VARCHAR(50),
+    mensaje TEXT,
+    fecha_solicitud DATETIME DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
