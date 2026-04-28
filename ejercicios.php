@@ -25,8 +25,9 @@
             </div>
 
             <nav class="menu-navegacion">
-                <a href="ejercicios.php" class="enlace-nav activo">EJERCICIOS</a>
                 <a href="home.php" class="enlace-nav">INICIO</a>
+                <a href="ejercicios.php" class="enlace-nav">ENTRENAMIENTOS</a>
+                <a href="index.php" class="enlace-nav activo">INICIAR SESION</a>
                 <a href="registro.php" class="boton-registro">REGISTRARSE</a>
             </nav>
         </div>
@@ -49,7 +50,7 @@
             <div class="cuadricula-ejercicios">
                 <div class="tarjeta-ejercicio">
                     <div class="imagen-tarjeta">
-                        <img src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?q=80&w=600" alt="Press">
+                        <img src="imagenes/pressbanca.webp" alt="Press">
                         <span class="etiqueta-dificultad intermedio">INTERMEDIO</span>
                     </div>
                     <div class="detalles-tarjeta">
@@ -61,7 +62,7 @@
 
                 <div class="tarjeta-ejercicio">
                     <div class="imagen-tarjeta">
-                        <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=600" alt="Sentadilla">
+                        <img src="imagenes/sentadillabarra.webp" alt="Sentadilla">
                         <span class="etiqueta-dificultad avanzado">AVANZADO</span>
                     </div>
                     <div class="detalles-tarjeta">
@@ -70,6 +71,54 @@
                         <button class="boton-añadir">+ AÑADIR A MI LISTA</button>
                     </div>
                 </div>
+
+                <div class="tarjeta-ejercicio">
+    <div class="imagen-tarjeta">
+        <img src="imagenes/pesomuerto.webp" alt="Peso Muerto">
+        <span class="etiqueta-dificultad avanzado">AVANZADO</span>
+    </div>
+    <div class="detalles-tarjeta">
+        <h3>Peso Muerto</h3>
+        <p>Espalda • Fuerza • Barra</p>
+        <button class="boton-añadir">+ AÑADIR A MI LISTA</button>
+    </div>
+</div>
+
+<div class="tarjeta-ejercicio">
+    <div class="imagen-tarjeta">
+        <img src="imagenes/remobarra.webp" alt="Remo con Barra">
+        <span class="etiqueta-dificultad intermedio">INTERMEDIO</span>
+    </div>
+    <div class="detalles-tarjeta">
+        <h3>Remo con Barra</h3>
+        <p>Espalda • Hipertrofia • Barra</p>
+        <button class="boton-añadir">+ AÑADIR A MI LISTA</button>
+    </div>
+</div>
+
+<div class="tarjeta-ejercicio">
+    <div class="imagen-tarjeta">
+        <img src="imagenes/pressmilitar.webp" alt="Press Militar">
+        <span class="etiqueta-dificultad intermedio">INTERMEDIO</span>
+    </div>
+    <div class="detalles-tarjeta">
+        <h3>Press Militar</h3>
+        <p>Hombros • Fuerza • Mancuernas</p>
+        <button class="boton-añadir">+ AÑADIR A MI LISTA</button>
+    </div>
+</div>
+
+<div class="tarjeta-ejercicio">
+    <div class="imagen-tarjeta">
+        <img src="imagenes/zancadas.webp" alt="Zancadas">
+        <span class="etiqueta-dificultad principiante">PRINCIPIANTE</span>
+    </div>
+    <div class="detalles-tarjeta">
+        <h3>Zancadas</h3>
+        <p>Piernas • Tonificación • Mancuernas</p>
+        <button class="boton-añadir">+ AÑADIR A MI LISTA</button>
+    </div>
+</div>
             </div>
         </div>
     </main>
